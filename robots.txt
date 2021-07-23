@@ -1,0 +1,9 @@
+# Kullanmanız önerilir
+
+User-agent: *
+Disallow: /data/
+Disallow: /extra/
+Disallow: /vendor/
+Disallow: /panel.php
+Disallow: /kur.php
+Disallow: *.txt

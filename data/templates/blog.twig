@@ -1,0 +1,35 @@
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <h2 class="panel-title">
+                Blog
+                {% if true is constant("ADMIN_GIRISI") %}
+                    <a href="panel.php?sayfa=yeniyazi" class="btn btn-success btn-fab pull-right"><i class="material-icons">add</i></a>
+                {% endif %}
+            </h2>
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                {% for yazi in blog_yazilari %}
+                    <a class="list-group-item" href="blog_yazi.php?yazi={{ yazi.id }}">
+                        <h3>{{ yazi.baslik }}</h3>
+                        <span>{{ yazi.icerik[:yazi_onizleme_limit] | raw }}</span>
+                        <span class="text-muted pull-right">Yazan: {{ yazi.yazar_ad }}</span>
+                        <div class="clearfix"></div>
+                    </a>
+                {% else %}
+                    <div class="omcw-blog-yazi-kucuk">
+                        <h3>Hiç bir yazın yok mu?</h3>
+                        <span>Blogunda hiç bir yazı yok O_o</span>
+                    </div>
+                {% endfor %}
+            </div>
+            <nav>
+                <ul class="pager">
+                    {%  if suanki_sayfa != 1 %} <li class="previous"><a href="blog.php?sayfa={{ suanki_sayfa - 1 }}"><span aria-hidden="true">&larr;</span> Önceki Sayfa</a></li> {% endif %}
+                    {% if suanki_sayfa != blog_sayfalari %}<li class="next"><a href="blog.php?sayfa={{ suanki_sayfa + 1 }}">Sonraki Sayfa <span aria-hidden="true">&rarr;</span></a></li> {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

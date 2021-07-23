@@ -1,0 +1,74 @@
+<div class="col-md-4">
+    {% if true is constant("SERVER_ONLINE") %}
+        <div class="panel panel-success">
+    {% else %}
+        <div class="panel panel-danger">
+    {% endif %}
+        <div class="panel-heading">
+            <h2 class="panel-title">Sunucumuzun durumu</h2>
+        </div>
+        <div class="panel-body">
+            Sunucumuz şu anda
+            {% if true is constant("SERVER_ONLINE") %}
+                <span class="text-success">açıktır.</span> ve {{ serv_oyuncular | length }} oyuncu şu anda sunucumuzda oynamaktadır.
+                <br><br>
+                Sen de katıl! <b>{{ serv_ip }}</b>
+            {% else %}
+                <span class="text-danger">kapalıdır.</span>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if true is constant("SERVER_ONLINE") %}
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h2 class="panel-title">Şu anda online oyuncular</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    {% for oyuncu in serv_oyuncular %}
+                        <li class="list-group-item">
+                            <img src="https://minepic.org/avatar/32/{{ oyuncu }}" />
+                            {{ oyuncu }}
+                        </li>
+                    {% else %}
+                        <li class="list-group-item">
+                            <img src="https://minepic.org/avatar/32/Steve" />
+                            Hiç kimse sunucuda değil :(
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<div class="col-md-8">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <h2 class="panel-title">
+                En yeni 2 blog yazısı
+                {% if true is constant("ADMIN_GIRISI") %}
+                    <a href="panel.php?sayfa=yeniyazi" class="btn btn-success btn-fab pull-right"><i class="material-icons">add</i></a>
+                {% endif %}
+            </h2>
+        </div>
+        <div class="panel-body">
+            {% for yazi in son_blog %}
+                <div class="omcw-blog-yazi-kucuk">
+                    <h3>{{ yazi.baslik }}</h3>
+                    <span>{{ yazi.icerik[:yazi_onizleme_limit] | raw }}</span>
+                    <div class="clearfix">
+                        <span class="text-muted pull-right">Yazan: {{ yazi.yazar_ad }}</span>
+                    </div>
+                </div>
+            {% else %}
+                <div class="omcw-blog-yazi-kucuk">
+                    <h3>Hiç bir yazın yok mu?</h3>
+                    <span>Blogunda hiç bir yazı yok O_o</span>
+                </div>
+            {% endfor %}
+            <a href="blog.php" class="btn btn-info btn-block center-block">Bütün yazılara bak</a>
+        </div>
+    </div>
+</div>

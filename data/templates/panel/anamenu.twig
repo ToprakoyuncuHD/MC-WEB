@@ -1,0 +1,31 @@
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <h2 class="panel-title">Panel</h2>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                <ul id="adminlist">
+                    {% if true is constant("ADMIN_GIRISI") %}
+                        <li>Blog Yazısı</li>
+                        <li><a href="panel.php?sayfa=yeniyazi">Yeni Blog Yazısı</a></li>
+                        <!-- TODO: Bunları bitir
+                        <li><br></li>
+                        <li>Hesaplar</li>
+                        <li><a href="panel.php?sayfa=yenihesap">Hesap ekle</a></li>
+                        <li><a href="panel.php?sayfa=duzenlehesap">Hesap düzenle</a></li>
+                        <li><br></li>-->
+                    {% else %}
+                        <li>Bu sürümde panelde bir şey yoktur.</li>
+                    {% endif %}<!--
+                        <li>Kullanıcı</li>
+                        <li><a href="panel.php?sayfa=degistirsifre">Şifre Değiştir</a></li>
+                        <li><a href="panel.php?sayfa=silhesap">Hesabı Sil</a></li>-->
+                </ul>
+            </div>
+            <div class="col-md-9">
+                {% include "panel/incl/" ~ incl ~ ".twig" %}
+            </div>
+        </div>
+    </div>
+</div>

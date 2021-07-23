@@ -1,0 +1,9 @@
+# Composer dosyaları -- "composer install" çalıştırdığınızda yaratılıcaklardır
+/vendor/
+composer.lock
+
+# Config dosyası -- OpenMCWeb kurulunca yaratılıcaktır
+/data/config.php
+
+# PHPStorm klasörü -- İhtiyacınız yok ;)
+.idea/

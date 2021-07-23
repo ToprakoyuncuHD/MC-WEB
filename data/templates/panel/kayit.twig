@@ -1,0 +1,25 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-inverse">
+    <div class="panel-heading">
+      <h2 class="panel-title">Kayıt Ol</h2>
+    </div>
+    <div class="panel-body">
+      <form action="data/admin/kayitOl.php" method="post">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Kullanıcı Adı" name="username">
+        <span class="help-block">Sunucuya gireceğiniz kullanıcı adını yazınız.</span>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Şifre" name="password">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Şifre Tekrarı" name="password2">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-success btn-raised btn-block center-block" value="Kayıt Ol">
+          <span class="text-muted">Hesabınız varsa <a href="panel.php?sayfa=giris">Giriş Yap</a> sayfasından giriş yapabilirsiniz.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

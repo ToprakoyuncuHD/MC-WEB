@@ -1,0 +1,14 @@
+<?php
+
+$db_host    = "{{ db_host }}"; //MySQL Sunucusu
+$db_user    = "{{ db_user }}"; //MySQL Kullanıcı adı
+$db_pass    = "{{ db_pass }}"; //MySQL Şifresi
+$db_name    = "{{ db_name }}"; //MySQL Sunucusu
+
+$serv_ad    = "{{ serv_ad }}"; //Minecraft Sunucu Adı.
+$serv_ip    = "{{ serv_ip }}"; //Minecraft Sunucu IPsi
+$serv_port  = "{{ serv_port }}"; //MCWSC Portu
+
+$bg_resim   = "/ekstra/arkaplan.jpg"; //Anasayfa arkaplan resmi.
+
+$blog_limit = {{ blog_limit }}; //Bir blog sayfasındaki yazı limiti
